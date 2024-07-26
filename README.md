@@ -30,6 +30,7 @@ And the following libaries:
 * PID_v2 2.0.1
 * SimpleKalmanFilter 0.1
 * SparkFun 9DoF IMU Breakout - ICM 20948 - Arduino Library 1.2.12
+
 Libraries in *italic* are included by default in the esp32 boards.
 
 ### Uploading
