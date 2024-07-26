@@ -4,45 +4,45 @@
 
 # Waveshare UGV Robots
 This is a lower computer example for the [Waveshare](https://www.waveshare.com/) UGV robots with ROS Driver: **UGV Rover**, **UGV Beast**, **RaspRover**, **UGV02**\*.
+**Please see the original repo for more details**
 
-\*The old version of UGV02 is driven by General Driver.
+## Compile and upload
+### Libraries and environment
+The image has been built (and thus confirmed to work) with the following configs:
+* Arduino IDE 2.3.2
+* esp32 3.0.2 by Espressif Systems (board manager)
+    * Do not choose "Arduino ESP32 Boards"!
+    * You should choose your project board to be `ESP32 Dev Module`
+And the following libaries:
+* ArduinoJson 7.1.0
+* *LittleFS* 2.0.0
+* *FS* 2.0.0
+* *WiFi* 2.0.0
+* *NetWorking* 1.0.0
+* *WebServer* 2.0.0
+* Adafruit SSD1306 2.5.10
+* Adafruit GFX Library 1.11.10
+* Adafruit BusIO 1.16.1
+* *Wire* 2.0.0
+* *SPI* 2.0.0
+* INA219_WE 1.3.8
+* ESP32Encoder 0.11.6
+* PID_v2 2.0.1
+* SimpleKalmanFilter 0.1
+* SparkFun 9DoF IMU Breakout - ICM 20948 - Arduino Library 1.2.12
+Libraries in *italic* are included by default in the esp32 boards.
 
-![](./README_footage/UGV-Rover-details-23.jpg)
+### Uploading
+You should use the "Export Compiled Binary" option to generate binaries at the current directory. This is stored in the `build` directory.
 
-## Basic Description
-The Waveshare UGV robots utilize both an upper computer and a lower computer. This repository contains the program running on the lower computer, which is typically a ESP32 on **ROS Driver for Robots**.  
-
-The program running on the lower computer is either named [ugv_base_ros](https://github.com/effectsmachine/ugv_base_ros.git) or [ugv_base_general](https://github.com/effectsmachine/ugv_base_general.git) depending on the type of robot driver being used.  
-
-The upper computer communicates with the lower computer (the robot's driver based on ESP32) by sending JSON commands via GPIO UART. The host controller, which employs a [Jetson Orin](https://github.com/waveshareteam/ugv_jetson) or a [Raspberry Pi](https://github.com/waveshareteam/ugv_rpi) based on the type of upper computer being used, handles AI vision and strategy planning, while the sub-controller, utilizing an ESP32, manages motion control and sensor data processing. This setup ensures efficient collaboration and enhanced performance.
-
-## Features
-- Closed-loop Speed Control with PID
-- Web App Based on ESP32
-- IMU
-- OLED Screen
-- LED Lights(12V switches) Control
-- Control via JSON Commands
-- Supports Camera PT
-- Supports RoArm-M2
-- Control and Communicate via ESP-NOW
-
-## Configure the compilation environment
-You need to install **[Arduino IDE](https://www.arduino.cc/en/software)** and **[ESP32 Board](https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/)** first.
-
-### Install libraries
-Copy `SCServo` folder into `C:\Users\[username]\AppData\Local\Arduino15\libraries\`
-
-Install libraries with **`Library Manager`**: ArduinoJson, LittleFS, Adafruit_SSD1306, INA219_WE, ESP32Encoder, PID_v2, SimpleKalmanFilter, Adafruit_ICM20X, Adafruit_ICM20948, Adafruit_Sensor
-
-### Basic Use
-You can send JSON command to robot via UART/USB@115200 or Http Request/Web App.
-
-To ensure compatibility with various types of robots. You can configure the robot by entering the following command:
-
-    {"T":900,"main":2,"module":2}
-
-In this command, the s directive denotes a robot-type setting. The first digit, `2`, signifies that the main type of robot is a `UGV Rover`, with `1` representing `RaspRover` and `3` indicating `UGV Beast`. The second digit, `2`, specifies the module as `Camera PT`, where `0` denotes `Nothing` and `1` signifies `RoArm-M2`.
+To upload to the board, you should use the included `flash_download_tool` (for windows).
+1. You should set the board name to `ESP32`.
+2. You should **always** keep a backup on the current firmware using the "develop" mode of the tool. Refer to https://docs.espressif.com/projects/esp-at/en/latest/esp32/Get_Started/Downloading_guide.html, section "Flash AT Firmware into Your Device", on how to do so.
+3. The `build` directory should contain a `...ino.merged.bin`. This is the file we want to flash.
+4. Go into into "factory" mode. Uncheck `LockSettings` and change the 4 default files to path of the merged binary, and set its address to `0`.
+    * If you do not change anything, the tool will flash v0.93 onto the board.
+5. Select the correct `COM` port and an appropriate baud rate, and flash.
+6. Disconnect your device and restart the robot. Check if it works.
 
 # License
 ugv_base_ros for the Waveshare UGV Robots: an open source robotics platform for the Robots based on **ROS Driver**.
