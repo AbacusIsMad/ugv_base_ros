@@ -113,10 +113,13 @@ void macStringToByteArray(const String& macString, uint8_t* byteArray) {
 }
 
 
-void OnDataRecv(const unsigned char* mac, const unsigned char* incomingData, int len) {
+//void OnDataRecv(const unsigned char* mac, const unsigned char* incomingData, int len) {
+void OnDataRecv(const esp_now_recv_info* info, const unsigned char* incomingData, int len) {
   if (espNowMode != 3){
     return;
   }
+  //acquire mac from info struct
+  const unsigned char* mac = info->src_addr;
 
   memcpy(&espNowMegsRecv, incomingData, sizeof(espNowMegsRecv));
   if (espNowMegsRecv.cmd == 3) {

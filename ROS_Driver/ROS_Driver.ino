@@ -1,9 +1,11 @@
+#include <Arduino.h>
+
 #include <ArduinoJson.h>
 StaticJsonDocument<256> jsonCmdReceive;
 StaticJsonDocument<256> jsonInfoSend;
 StaticJsonDocument<1024> jsonInfoHttp;
 
-#include <SCServo.h>
+#include "src/SCServo/SCServo.h"
 #include <nvs_flash.h>
 #include <esp_system.h>
 #include <LittleFS.h>
@@ -17,7 +19,7 @@ StaticJsonDocument<1024> jsonInfoHttp;
 #include <PID_v2.h>
 #include <SimpleKalmanFilter.h>
 #include <math.h>
-#include "ICM_20948.h"
+#include <ICM_20948.h>
 
 // functions for barrery info.
 #include "battery_ctrl.h"

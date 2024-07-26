@@ -1,0 +1,17 @@
+Using library ArduinoJson at version 7.1.0 in folder: C:\Users\gengr\Documents\Arduino\libraries\ArduinoJson 
+Using library SCSservo at version 1.0.1 in folder: C:\Users\gengr\AppData\Local\Arduino15\libraries\SCServo **
+Using library LittleFS at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\LittleFS *
+Using library FS at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\FS *
+Using library WiFi at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\WiFi *
+Using library Networking at version 1.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\Network *
+Using library WebServer at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\WebServer *
+Using library Adafruit SSD1306 at version 2.5.10 in folder: C:\Users\gengr\Documents\Arduino\libraries\Adafruit_SSD1306 
+Using library Adafruit GFX Library at version 1.11.10 in folder: C:\Users\gengr\Documents\Arduino\libraries\Adafruit_GFX_Library 
+Using library Adafruit BusIO at version 1.16.1 in folder: C:\Users\gengr\Documents\Arduino\libraries\Adafruit_BusIO 
+Using library Wire at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\Wire *
+Using library SPI at version 2.0.0 in folder: C:\Users\gengr\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\libraries\SPI *
+Using library INA219_WE at version 1.3.8 in folder: C:\Users\gengr\Documents\Arduino\libraries\INA219_WE 
+Using library ESP32Encoder at version 0.11.6 in folder: C:\Users\gengr\Documents\Arduino\libraries\ESP32Encoder 
+Using library PID_v2 at version 2.0.1 in folder: C:\Users\gengr\Documents\Arduino\libraries\PID_v2 
+Using library SimpleKalmanFilter at version 0.1 in folder: C:\Users\gengr\Documents\Arduino\libraries\SimpleKalmanFilter 
+Using library SparkFun 9DoF IMU Breakout - ICM 20948 - Arduino Library at version 1.2.12 in folder: C:\Users\gengr\Documents\Arduino\libraries\SparkFun_9DoF_IMU_Breakout_-_ICM_20948_-_Arduino_Library
