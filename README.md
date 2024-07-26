@@ -13,6 +13,7 @@ The image has been built (and thus confirmed to work) with the following configs
 * esp32 3.0.2 by Espressif Systems (board manager)
     * Do not choose "Arduino ESP32 Boards"!
     * You should choose your project board to be `ESP32 Dev Module`
+
 And the following libaries:
 * ArduinoJson 7.1.0
 * *LittleFS* 2.0.0
