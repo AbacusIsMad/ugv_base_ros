@@ -39,7 +39,7 @@ You should use the "Export Compiled Binary" option to generate binaries at the c
 
 To upload to the board, you should use the included `flash_download_tool` (for windows).
 1. You should set the board name to `ESP32`.
-2. You should **always** keep a backup on the current firmware using the "develop" mode of the tool. Refer to https://docs.espressif.com/projects/esp-at/en/latest/esp32/Get_Started/Downloading_guide.html, section "Flash AT Firmware into Your Device", on how to do so.
+2. You should **always** keep a backup on the current firmware using the "develop" mode of the tool. Refer to docs included on how to do so.
 3. The `build` directory should contain a `...ino.merged.bin`. This is the file we want to flash.
 4. Go into into "factory" mode. Uncheck `LockSettings` and change the 4 default files to path of the merged binary, and set its address to `0`.
     * If you do not change anything, the tool will flash v0.93 onto the board.
